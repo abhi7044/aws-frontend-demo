@@ -107,3 +107,12 @@
   cursor: pointer;
   /* font-size: px; */
 }
+
+.auth-link {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
