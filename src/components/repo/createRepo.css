@@ -1,0 +1,247 @@
+.cr-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  color: #e6edf3;
+}
+
+.cr-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.cr-sub {
+  color: #8d96a0;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.cr-sub em {
+  color: #8d96a0;
+}
+
+/* Steps (1 General, 2 Configuration) */
+.cr-step {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cr-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cr-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1c2128;
+  border: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cr-line {
+  width: 2px;
+  flex: 1;
+  background: #30363d;
+  margin-top: 4px;
+}
+
+.cr-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cr-h {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 16px;
+}
+
+/* Form fields */
+.cr-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cr-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.cr-slash {
+  font-size: 24px;
+  color: #8d96a0;
+  padding-bottom: 4px;
+}
+
+.cr-input,
+.cr-select {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  padding: 8px 12px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.cr-input:focus,
+.cr-select:focus {
+  outline: 2px solid #1f6feb;
+  border-color: #1f6feb;
+}
+
+.cr-owner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cr-owner img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.cr-hint {
+  color: #8d96a0;
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+.cr-count {
+  color: #8d96a0;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* Configuration cards */
+.cr-card {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.cr-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #30363d;
+}
+
+.cr-item:last-child {
+  border-bottom: none;
+}
+
+.cr-item-t {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cr-item-d {
+  font-size: 12px;
+  color: #8d96a0;
+  margin-top: 4px;
+}
+
+.cr-item .cr-select {
+  width: auto;
+  min-width: 150px;
+  font-weight: 600;
+  background: #21262d;
+}
+
+/* README toggle switch */
+.cr-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #8d96a0;
+}
+
+.cr-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cr-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #e6edf3;
+  border-radius: 50%;
+  transition: left 0.15s;
+}
+
+.cr-switch.on {
+  background: #238636;
+  border-color: #238636;
+}
+
+.cr-switch.on::after {
+  left: 22px;
+}
+
+/* Button and error */
+.cr-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.cr-btn {
+  background: #238636;
+  color: #fff;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cr-btn:hover {
+  background: #2ea043;
+}
+
+.cr-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cr-err {
+  color: #f85149;
+  font-size: 14px;
+  margin-top: 8px;
+}

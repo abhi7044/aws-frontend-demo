@@ -1,0 +1,27 @@
+#dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: 1080px;
+}
+
+.repo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.star-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #f1f6fd;
+  font-size: 18px;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+.star-btn.starred {
+  color: #e3b341;
+  border-color: #e3b341;
+}
