@@ -36,7 +36,7 @@ const ProjectRoutes = () => {
     }
   }, [currentUser, navigate, setCurrentUser]);
 
-  let element = useRoutes([
+    let element = useRoutes([
     {
       path: "/",
       element: <Dashboard />,
