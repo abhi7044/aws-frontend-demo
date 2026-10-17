@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css";
 import Navbar from "../Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [repositories, setRepositories] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestedRepositories, setSuggestedRepositories] = useState([]);
@@ -78,7 +80,7 @@ const Dashboard = () => {
     try {
       const res = await fetch(
         `http://localhost:3000/user/star/${userId}/${repoId}`,
-        { method: "POST" }
+        { method: "POST" },
       );
       if (!res.ok) return;
       const data = await res.json();
@@ -120,14 +122,20 @@ const Dashboard = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          {searchResults.map((repo) => {
-            return (
-              <div key={repo._id}>
+          {searchResults.map((repo) => (
+            <div key={repo._id} className="repo-row">
+              <div>
                 <h4>{repo.name}</h4>
-                <h4>{repo.description}</h4>
+                <p>{repo.description}</p>
               </div>
-            );
-          })}
+              <button
+                className="issues-btn"
+                onClick={() => navigate(`/issues/${repo._id}`)}
+              >
+                Issues
+              </button>
+            </div>
+          ))}
         </main>
         <aside>
           <h3>Upcomming Events</h3>

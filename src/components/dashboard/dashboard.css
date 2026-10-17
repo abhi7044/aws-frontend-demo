@@ -1,4 +1,4 @@
-#dashboard {
+/* #dashboard {
     display: flex;
     justify-content: space-between;
     width: 1080px;
@@ -10,7 +10,7 @@
   align-items: center;
   gap: 12px;
 }
-
+*/
 .star-btn {
   background: transparent;
   border: 1px solid #30363d;
@@ -24,4 +24,116 @@
 .star-btn.starred {
   color: #e3b341;
   border-color: #e3b341;
+} 
+
+/* ===== Dashboard layout =====
+   Isko dashboard.css ke sabse NEECHE paste karo.
+   Baad me likhe rules purane rules ko override kar dete hain. */
+
+#dashboard {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 280px;
+  gap: 24px;
+  align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  color: #f1f6fd;
+  text-align: left;
+}
+
+/* Teeno columns ko card jaisa banao */
+#dashboard > aside,
+#dashboard > main {
+  width: auto;
+  box-sizing: border-box;
+  background-color: #161a23;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+/* Teeno headings ek jaisi */
+#dashboard h2,
+#dashboard h3 {
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #30363d;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Har repo ki row */
+#dashboard aside > div,
+#dashboard main > div:not(#search) {
+  padding: 10px 0;
+  border-bottom: 1px solid #21262d;
+}
+
+#dashboard aside > div:last-of-type,
+#dashboard main > div:last-of-type {
+  border-bottom: none;
+}
+
+#dashboard h4 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#dashboard p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9da7b3;
+}
+
+/* Events list */
+#dashboard ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+#dashboard li {
+  margin-bottom: 10px;
+}
+
+/* Search box */
+#search input {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  margin: 0 0 16px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background-color: #0c1116;
+  color: whitesmoke;
+  font-size: 0.95rem;
+}
+
+#search input:focus {
+  outline: none;
+  border-color: lightblue;
+}
+
+/* Chhoti screen par ek ke neeche ek */
+@media (max-width: 900px) {
+  #dashboard {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+}
+.issues-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #58a6ff;
+  font-size: 14px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.issues-btn:hover {
+  border-color: #58a6ff;
+  background: #161b22;
 }
