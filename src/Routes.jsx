@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import IssuePage from "./components/issue/IssuePage";
 import { useNavigate, useRoutes } from "react-router-dom";
 
 // Pages List
@@ -60,9 +61,13 @@ const ProjectRoutes = () => {
       path: "/starred",
       element: <StarredRepos />,
     },
-    { 
+    {
       path: "/create",
-      element: <CreateRepo /> 
+      element: <CreateRepo />,
+    },
+    {
+      path: "/issues/:repoId",
+      element: <IssuePage />,
     },
   ]);
   return element;
