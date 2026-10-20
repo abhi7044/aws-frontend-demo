@@ -159,6 +159,12 @@ const CreateRepo = () => {
         navigate("/"); // ya jahan bhejna ho
     } catch (err) {
         console.error(err);
+        if (err.response?.status === 401 || err.response?.status === 403) {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    window.location.href = "/auth";
+    return;
+  }
         alert(err.response?.data?.error || "Repository create nahi hui");
     }
 };
