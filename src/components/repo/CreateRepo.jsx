@@ -104,7 +104,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./createRepo.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 const NAME_REGEX = /^[A-Za-z0-9._-]+$/;
 
@@ -125,9 +125,9 @@ const CreateRepo = () => {
   useEffect(() => {
     if (!userId) return;
     axios
-      .get(`http://localhost:3000/user/userProfile/${userId}`)
-      .then((res) => setUsername(res.data.username))
-      .catch((err) => console.error("Cannot fetch user: ", err));
+  .get(`${API_URL}/user/userProfile/${userId}`)
+  .then((res) => setUsername(res.data.username))
+  .catch((err) => console.error("Cannot fetch user: ", err));
   }, [userId]);
 
   const avatarUrl = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(
