@@ -7,6 +7,16 @@ import ProjectRoutes from './Routes.jsx';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider, BaseStyles } from '@primer/react'
 
+import axios from "axios";
+
+axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 if (import.meta.env.DEV) {
   const originalError = console.error;
   console.error = (...args) => {

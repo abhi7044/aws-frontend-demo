@@ -104,6 +104,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./createRepo.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const NAME_REGEX = /^[A-Za-z0-9._-]+$/;
 
 const CreateRepo = () => {
@@ -134,39 +136,32 @@ const CreateRepo = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
 
-    const repoName = name.trim();
-    if (!repoName) return setError("Repository name is required");
-    if (!NAME_REGEX.test(repoName))
-      return setError("Use only letters, numbers, '-', '_' or '.' (no spaces)");
+    const token = localStorage.getItem("token");
+    const userId = localStorage.getItem("userId");
 
     try {
-      setLoading(true);
-      await axios.post("http://localhost:3000/repo/create", {
-        name: repoName,
-        description: description.trim(),
-        visibility: visibility === "public",
-        owner: userId,
-        content: [],
-        issues: [],
-        // Ye 3 fields tab save honge jab Repository model mein add karoge
-        readme,
-        gitignore,
-        license,
-      });
-      navigate("/");
+        await axios.post(
+            `${API_URL}/repo/create`,
+            {
+                owner: userId,
+                name: name,
+                description: description,
+                visibility: visibility === "public", // dropdown ki string ko true/false banao
+                content: [],
+                issues: [],
+            },
+            {
+                headers: { Authorization: `Bearer ${token}` },
+            }
+        );
+
+        navigate("/"); // ya jahan bhejna ho
     } catch (err) {
-      console.error(err);
-      setError(
-        err.response?.data?.error ||
-          err.response?.data?.message ||
-          "Could not create repository"
-      );
-    } finally {
-      setLoading(false);
+        console.error(err);
+        alert(err.response?.data?.error || "Repository create nahi hui");
     }
-  };
+};
 
   return (
     <>
