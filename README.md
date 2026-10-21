@@ -4,7 +4,7 @@
 
 **A GitHub-inspired platform where you can create repositories, track issues, star projects and explore your profile — backed by its own mini version-control system.**
 
-[🚀 Live Demo](https://main.d1jwxcdr5bwis6.amplifyapp.com/) · [🎥 Demo Video](PASTE_VIDEO_LINK_HERE) · [⚙️ Backend Repo](https://github.com/abhi7044/github-backend-demo)
+[🚀 Live Demo](https://main.d1jwxcdr5bwis6.amplifyapp.com/) · [🎥 Demo Video](https://youtu.be/K1VGrIL52ZQ) · [⚙️ Backend Repo](https://github.com/abhi7044/github-backend-demo)
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
@@ -21,7 +21,11 @@
 
 | Login | Dashboard | Profile |
 |---|---|---|
-| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) | ![Profile](screenshots/profile.png) |
+| ![Login](screenshots/login.png) | ![Login](screenshots/signup.png) | ![Dashboard](screenshots/dashboard.png) | ![Profile](screenshots/profile.png) |
+
+| Create repo | Issues | Starred |
+|---|---|---|
+| ![Create](screenshots/create-repo.png) | ![Issues](screenshots/issues.png) | ![Starred](screenshots/starred.png) |
 
 ---
 
