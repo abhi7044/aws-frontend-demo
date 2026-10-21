@@ -116,6 +116,6 @@ Open http://localhost:5173 (start the backend first).
 
 <div align="center">
 
-Built by **Abhijeet Mishra** · [GitHub](https://github.com/abhi7044) · [LinkedIn](PASTE_LINKEDIN_LINK_HERE)
+Built by **Abhijeet Mishra** · [GitHub](https://github.com/abhi7044) · [LinkedIn](https://www.linkedin.com/in/abhijeet-mishra-140aa3353)
 
 </div>
