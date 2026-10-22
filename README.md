@@ -15,6 +15,7 @@
 
 > ⚠️ **Heads-up:** the backend runs on a small AWS EC2 server. If sign-up or login does not respond, the server may be switched off to save cost — please watch the demo video instead.
 
+> ⚠️ **Note:** If login does not work, the server may be offline. Please watch the demo video.
 ---
 
 ## 📸 Screenshots
