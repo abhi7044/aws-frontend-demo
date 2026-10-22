@@ -21,11 +21,21 @@
 
 | Login | Dashboard | Profile |
 |---|---|---|
-| ![Login](screenshots/login.png) | ![Login](screenshots/signup.png) | ![Dashboard](screenshots/dashboard.png) | ![Profile](screenshots/profile.png) |
+ ![Login](screenshots/login.png) 
+
+ ![Login](screenshots/signup.png)
+ 
+ ![Dashboard](screenshots/dashboard.png) 
+ 
+ ![Profile](screenshots/profile.png) |
 
 | Create repo | Issues | Starred |
 |---|---|---|
-| ![Create](screenshots/create-repo.png) | ![Issues](screenshots/issues.png) | ![Starred](screenshots/starred.png) |
+ ![Create](screenshots/create-repo.png) 
+ 
+ ![Issues](screenshots/issues.png) 
+ 
+ ![Starred](screenshots/starred.png) |
 
 ---
 
