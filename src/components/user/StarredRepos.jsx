@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const StarredRepos = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +11,7 @@ const StarredRepos = () => {
     const userId = localStorage.getItem("userId");
     const fetchStarred = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/user/starred/${userId}`);
+        const res = await fetch(`${API_URL}/user/starred/${userId}`);
         if (res.ok) {
           const data = await res.json();
           setRepos(data.starRepos || []);

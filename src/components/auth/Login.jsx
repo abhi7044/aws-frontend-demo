@@ -10,6 +10,8 @@ import "./auth.css";
 
 import logo from "../../assets/github-mark-white.svg";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +30,7 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/user/login/", {
+      const res = await axios.post(`${API_URL}/user/login/`, {
         email: email,
         password: password,
       });

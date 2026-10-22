@@ -3,6 +3,8 @@ import "./dashboard.css";
 import Navbar from "../Navbar";
 import { useNavigate } from "react-router-dom";
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -20,7 +22,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`,
+          `${API_URL}/repo/user/${userId}`,
         );
         if (!response.ok) {
           setRepositories([]);
@@ -36,7 +38,7 @@ const Dashboard = () => {
 
     const fetchStarred = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/user/starred/${userId}`);
+        const res = await fetch(`${API_URL}/user/starred/${userId}`);
         if (!res.ok) return;
         const data = await res.json();
         setStarredIds((data.starRepos || []).map((r) => r._id));
@@ -48,7 +50,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/all`);
+        const response = await fetch(`${API_URL}/repo/all`);
         if (!response.ok) {
           setSuggestedRepositories([]);
           return;
@@ -80,7 +82,7 @@ const Dashboard = () => {
   const handleStar = async (repoId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/user/star/${userId}/${repoId}`,
+        `${API_URL}/user/star/${userId}/${repoId}`,
         { method: "POST" },
       );
       if (!res.ok) return;

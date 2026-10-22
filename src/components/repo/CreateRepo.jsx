@@ -104,7 +104,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./createRepo.css";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const NAME_REGEX = /^[A-Za-z0-9._-]+$/;
 

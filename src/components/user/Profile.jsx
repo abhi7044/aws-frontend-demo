@@ -9,6 +9,8 @@ import HeatMapProfile from "./HeatMap";
 import { useAuth } from "../../authContext";
 import { useParams } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Profile = () => {
   const navigate = useNavigate();
   
@@ -36,7 +38,7 @@ const avatarUrl = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURICom
       if (!profileId) return;
       try {
         const response = await axios.get(
-          `http://localhost:3000/user/userProfile/${profileId}`
+          `${API_URL}/user/userProfile/${profileId}`
         );
         setUserDetails(response.data);
       } catch (err) {
